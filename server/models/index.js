@@ -3,5 +3,5 @@ const mongoose=require('mongoose')
 
 
 const User=require('./user')
-
-module.exports={User};
+const Msg=require('./messages')
+module.exports={User,Msg};
