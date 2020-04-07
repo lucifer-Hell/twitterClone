@@ -25,7 +25,7 @@ app.use('/api/user',msgRoute)
 // error handle function
 // if none of the route matches
 app.use('*',function(req,res,next){
-    console.log(err)
+   
     let err=new Error("Route not found")
     err.status=404
     next (err);

@@ -1,7 +1,7 @@
 const express=require('express')
 const bcrypt=require('bcrypt')
 const mongoose=require('mongoose')
-const Msg=require('./messages')
+
 mongoose.Promise=Promise;
 //  user scheama
 
@@ -27,6 +27,7 @@ const userSchema=mongoose.Schema({
     },
     messages:[
         {type:String,
+            unique:true,
           ref:"Msg"}
     ]   
 },
@@ -73,7 +74,8 @@ userSchema.pre('save', async function(next){
      }
      
 // convert into model
-const User=mongoose.model("User",userSchema)
+console.log("exported user model")
+const User= mongoose.model("User",userSchema)
 
 
 
