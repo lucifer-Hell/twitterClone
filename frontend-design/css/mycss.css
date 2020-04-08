@@ -1,0 +1,8 @@
+@charset "utf-8";
+.navbar.navbar-expand-lg.navbar-dark.bg-dark .navbar-brand {
+    margin-right: auto;
+    -webkit-margin-before-collapse: auto;
+    margin-left: auto;
+}
+.navbar.navbar-expand-lg.navbar-dark.bg-dark #navbarSupportedContent1 {
+}

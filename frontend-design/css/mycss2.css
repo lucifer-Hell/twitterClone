@@ -1,0 +1,24 @@
+@charset "utf-8";
+.navbar.navbar-expand-lg.navbar-dark.bg-dark .navbar-brand {
+    padding-right: 0px;
+    margin-right: 41%;
+}
+
+.navbar.navbar-expand-lg.navbar-dark.bg-dark #navbarSupportedContent {
+    padding-left: 32%;
+}
+.navbar-nav.mr-auto .nav-item .nav-link:hover  {
+    color: blue;
+}
+.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+
+}
+
+
+@media screen and (max-width:996px){
+.navbar.navbar-expand-lg.navbar-dark.bg-dark #navbarSupportedContent {
+    margin-left: -26%;
+}
+
+
+}
