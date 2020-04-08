@@ -10,7 +10,7 @@ function Navbar(props)
             <span className="navbar-toggler-icon"></span>
             </button>
        
-             <a className="navbar-brand" href="#" >VIT SHORTS</a>
+             <Link to ="/" className="navbar-brand " >VIT SHORTS</Link>
        
             <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           
