@@ -15,7 +15,7 @@ function Navbar(props)
             <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           
                    <ul className="navbar-nav navbar-right mr-auto mt-2 mt-lg-0 " id="navOptions">
-                        <li classNameName="nav-item ">
+                        <li className="nav-item ">
                         <Link to="/signUp" style={{textDecoration:"none"}}><span className="nav-link">Sign Up</span></Link>
                         </li>
                         <li className="nav-item ">

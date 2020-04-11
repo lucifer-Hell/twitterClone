@@ -3,7 +3,7 @@
 import React from 'react'
 import {withRouter, Link } from 'react-router-dom'
 
-const Home=()=>{
+const Home=(props)=>{
     return(
         <div>
          <Link to=  "/logIn" >

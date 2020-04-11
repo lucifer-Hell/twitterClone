@@ -1,11 +1,21 @@
 import {SET_CURRENT_USER} from '../actionTypes'
-const DEFAULT_STATE={isAuthenticated:false
-                        ,user:{}}
+
+
+const DEFAULT_STATE={
+                        isAuthenticated:false,
+                        user:{}
+                    }
+
 export default function (state=DEFAULT_STATE,action){
-    switch(action){
+   
+    
+    switch(action.type){
     case SET_CURRENT_USER:
+     
+      
         return{
-            isAuthenticated:Object.keys(action.user.length)>0,
+            ...state,
+            isAuthenticated:action.isAuthenticated,
             user:action.user            
         }
     default :

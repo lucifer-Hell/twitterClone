@@ -15,7 +15,7 @@ function App (props){
             <div id="mainApp">
                 <Navbar />
                 <br></br>
-                <Main />
+                <Main  />
             </div>
         </Router>
       </Provider>

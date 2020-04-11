@@ -1,10 +1,10 @@
 // here we will do either sign UP or login
 import React ,{useState,useEffect} from 'react'
-import {withRouter} from 'react-router-dom'
-import { combineReducers } from 'redux';
+import {withRouter, useHistory} from 'react-router-dom'
+
 function Auth(props){
     // get the heading and buttonText
-    let {heading,buttonText}=props;
+    
     let intialState={
         username:"",
         email:"",
@@ -12,38 +12,51 @@ function Auth(props){
         profileImg:""
     }
 
-
+    let authUser=props.authUser;
 
     let [user,setUser]=useState(intialState)
-  
-  
+    let [sub,setSub]=useState(false)
+    
     function handleSubmit(e){
+       
         e.preventDefault()
         let datas=e.target.querySelectorAll('input')
-        console.log(typeof(datas))
         let newUser=[...datas].reduce((acc,data)=>{
             return ({...acc,[data.name]:data.value})
         },{})
-        
         setUser(newUser)
-        // this will handle the data     
+        setSub(true)
+     
         e.target.reset()
 
     }
 
-    function handleChange(e){
-        console.log(e.target.value)
-    }
-    
- 
-    useEffect(()=>{
-        console.log("rendered")
-        console.log(user)
-    })
 
-    let extras;
+    
+    let history=useHistory();
+    useEffect(()=>{
+      
+        if(props.isAuthenticated===true){
+           history.push("/")
+        }
+
+       
+      if(sub===true){
+          
+        
+        if(props.signUp)authUser(user,"signUp")
+        else authUser(user,"logIn")
+          setSub(false)
+        
+
+      }     
+       
+    },[sub,user,authUser,history,props.signUp,props.isAuthenticated])
+  
+
     return(
         <form onSubmit={handleSubmit}>
+            
             <h2>{props.heading}</h2>
             email:<input type="text" name="email"  />
             password:<input type="password" name="password"  />
@@ -62,6 +75,7 @@ function Auth(props){
             }
 
             <button type="submit" >{props.buttonText}</button>
+            {(props.error.message!==null) &&( <div className="alert alert-danger"> <strong>{props.error.message}</strong> </div>)}
         </form>
     )
 }
