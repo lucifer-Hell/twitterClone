@@ -6,7 +6,7 @@ function Auth(props){
     // get the heading and buttonText
     
     let intialState={
-        username:"",
+        name:"",
         email:"",
         password:"",
         profileImg:""
@@ -43,7 +43,7 @@ function Auth(props){
        
       if(sub===true){
           
-        
+        console.log(user)
         if(props.signUp)authUser(user,"signUp")
         else authUser(user,"logIn")
           setSub(false)
@@ -66,7 +66,7 @@ function Auth(props){
                         if(props.signUp){
                             return(
                                 <span>
-                                username:<input type="text" name="username"  />
+                                username:<input type="text" name="name"  />
                                 profileImg:<input type="text" name="profileImg"  />
                                 </span>
                             )

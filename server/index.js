@@ -12,7 +12,7 @@ const errorHandler=require('./handlers/errorHandler')
 const authRoute=require('./routes/auth')
 const msgRoute=require('./routes/messages')
 const connectDB=require('./middlewares/dbHandler')
-
+app.use(cors())
 app.use(bodyParser.json())
 
 // ensures db is connected before any routes are processed

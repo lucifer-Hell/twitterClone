@@ -1,5 +1,6 @@
 import React , {Component} from 'react'
 import {connect} from 'react-redux'
+import Dashboard from '../containers/dasboard'
 
  function WithAuth(Comp){
      class HOC extends React.Component{
@@ -7,7 +8,7 @@ import {connect} from 'react-redux'
         render(){
                     
                     if(this.props.isAuthenticated){
-                        return (<div>Sucess!</div>)
+                        return (<Dashboard />)
                     }
                     else{
                         return (

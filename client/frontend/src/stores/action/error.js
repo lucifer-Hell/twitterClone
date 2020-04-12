@@ -6,7 +6,7 @@ export function addError(err){
    }
    
 export function removeError(){
-    debugger;
+    
     console.log("can't figure remove error")
     return ({type:REMOVE_ERROR})
 }

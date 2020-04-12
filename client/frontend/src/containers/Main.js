@@ -22,16 +22,18 @@ function Main(props){
    const NewComponent=WithAuth(Home);
     return(
         <Switch>
-            <Route exact path="/" >
-                <NewComponent />    
-            </Route>
+           
                
           
             <Route exact path="/signUp">
-                 <Auth heading={"Welcome to warbler"} isAuthenticated={props.currentUser.isAuthenticated} error={props.error} signUp={true} buttonText="Sign Up" />
+                 <Auth heading={"Welcome to warbler"} authUser={props.authUser} isAuthenticated={props.currentUser.isAuthenticated} error={props.error} signUp={true} buttonText="Sign Up" />
             </Route> 
             <Route exact path="/login">
                  <Auth authUser={props.authUser} isAuthenticated={props.currentUser.isAuthenticated} error={props.error} signUp={false} heading={"Welcome Back :)"} buttonText="Log In" />
+            </Route>
+             {/* not giving exact path because it will cause hidden errors */}
+            <Route  path="/" >
+                <NewComponent />    
             </Route>
         </Switch>
     )
@@ -49,4 +51,4 @@ function mapStateToProps(state){
 }
 
 
-export default withRouter(connect(mapStateToProps,{authUser,clearError})(Main))
+export default connect(mapStateToProps,{authUser,clearError})(Main)

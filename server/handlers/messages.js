@@ -11,8 +11,9 @@ async function createNewMesssage(req,res,next){
         
         // create document from model
         let msg=new Msg({text:req.body.text,user:userId})
-        if(msg===null) throw "Unable to make user"
+        if(msg===null) throw "Unable to make msg"
         let sucess=await msg.save()
+        console.log("sucess :"+sucess)
         res.status(200).json(sucess);
 
     }catch(err){

@@ -46,7 +46,7 @@ async function isCorrectUser(req,res,next){
         if(decoded._id===userId) next()
         else {
             next({
-                message:"You cannot edit this message "
+                message:"You cannot delete this message "
                 ,status:400
             })
         }

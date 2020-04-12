@@ -13,12 +13,32 @@
 .navbar.navbar-expand-lg.navbar-dark.bg-dark {
 
 }
+body mainbody messagebox {
+    padding-right: 0%;
+    text-shadow: 0px 0px #D46768;
+
+}
+.card.text-center.col-md-4 {
+    text-shadow: 0px 0px #F15759;
+    text-align: center;
+    background-color: #E06C6E;
+    -webkit-box-shadow: 34px 8% 15px #F1C9CA;
+    box-shadow: 34px 8% 15px #F1C9CA;
+    align-self: center;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+
+
+
 
 
 @media screen and (max-width:996px){
 .navbar.navbar-expand-lg.navbar-dark.bg-dark #navbarSupportedContent {
     margin-left: -26%;
 }
+
 
 
 }

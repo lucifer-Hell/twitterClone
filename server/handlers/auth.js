@@ -6,13 +6,13 @@ const jwt=require('jsonwebtoken')
     let name=req.body.name
     let email=req.body.email
     let password=req.body.password
-    let profileImg=req.body.img;
+    let profileImg=req.body.profileImg;
     try {
        let user= new   User({userName:name,userEmail:email,userPassword:password,userProfileImg:profileImg})
         let {userName,_id,userProfileImg}= await user.save()
         
         let token=jwt.sign({userName,_id,userProfileImg},process.env.SECRET_KEY)
-        res.status(200).json(token)
+        res.status(200).json({token:token,userName:userName,id:_id,userProfileImg:userProfileImg})
     }
     catch(err){
 
@@ -45,7 +45,9 @@ async function logIn(req,res,next){
              let {userName,_id,userProfileImg}=user
              
              let token=jwt.sign({userName,_id,userProfileImg},process.env.SECRET_KEY)
-             res.status(200).json(token)
+             res.status(200).json({token:token,userName:userName,id:_id,userProfileImg:userProfileImg})
+             
+            
      
            }else {
                let passwordErr=new Error("Invalid password try again !")

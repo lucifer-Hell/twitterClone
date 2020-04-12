@@ -6,10 +6,15 @@ function responseError(message,code){
 }
 
 
-async function apiCall(method,url,data){
-        try{
-                let response=await axios({method,url,data})
-                
+async function apiCall(method,url,data,headers=null){
+        try{    
+                let response
+                if(headers===null)
+                { response=await axios({baseURL:"http://localhost:8081/",method,url,data}) }
+                else{
+                 response=await axios({baseURL:"http://localhost:8081/",method,url,data,headers}) 
+                        
+                }
                 return response;
 
         }   catch(err){

@@ -7,23 +7,37 @@
     <title>Bootstrap - Prebuilt Layout</title>
 
     <!-- Bootstrap -->
+
     <link href="css/bootstrap-4.3.1.css" rel="stylesheet">
     <link href="css/mycss2.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
-    <a class="navbar-brand" href="#">Warbler</a>
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item"> <a class="nav-link" href="#">Log In</a> </li>
-	  <li class="nav-item"> <a class="nav-link" href="#">Sign UP</a> </li>
-        
-      </ul>
-     
-    </div>
-  </nav>
+  <mainnavbar>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
+      <a class="navbar-brand" href="#">Warbler</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"> <a class="nav-link" href="#">Log In</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Sign UP</a></li>
+        </ul>
+      </div>
+    </nav>
+  </mainnavbar>
+  <mainbody>
+    <dashboard></dashboard>
+    <div class="container-fluid"> </div>
+    <messagebox>
+      <div class="card text-center col-md-4">
+        <div class="card-header"> Header </div>
+        <div class="card-body">
+          <h5 class="card-title">Card Title</h5>
+          <p class="card-text">Card with header and footer.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a></div>
+        <div class="card-footer text-muted"> Footer </div>
+      </div>
+    </messagebox>
+  </mainbody>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> <script src="js/jquery-3.3.1.min.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed --> 
