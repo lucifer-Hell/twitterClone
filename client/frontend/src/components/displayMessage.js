@@ -1,19 +1,27 @@
 import React from 'react'
 
 function DisplayMessage (props){
-
-        // display message 
+      function handleRemove(data){
+        debugger;
+         
+           let args={
+            text:props.data.text           
+           }
+           props.removeMsg(args)
+      }
+        
         return(
-          
-            <div className="card text-center col-md-4">
-              <div className="card-header"> Header </div>
+            <div>
+              <div className="card text-center col-md-4">
+              <div className="card-header"> By {props.data.user.userName }  </div>
               <div className="card-body">
-                <h5 className="card-title">Card Title</h5>
-                <p className="card-text">Card with header and footer.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a></div>
-              <div className="card-footer text-muted"> Footer </div>
+        <h5 className="card-title">   { props.data.text}   </h5>                
+  
+              { (props.id===props.data.user._id) &&( <a onClick={()=>{handleRemove(props.data)}} className="btn btn-danger">delete</a>)}
+              </div>
+              </div>
             </div>
-       
+
 
 
         )

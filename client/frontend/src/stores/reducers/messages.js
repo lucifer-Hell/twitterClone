@@ -1,22 +1,30 @@
 import {GET_MESSAGES,ADD_MESSAGE,REMOVE_MESSAGE} from '../actionTypes'
 
 const DEFAULT_STATE={
-    usersPosts:[]
+    userPosts:[]
 }
 
 function messages(state=DEFAULT_STATE,action){
+  
     switch (action.type){
+       
         case GET_MESSAGES:
-            return {...state,userPosts:action.userPosts}
+         
+            let newMsgs=action.userPosts
+           
+            return {...state,userPosts:newMsgs}
         case ADD_MESSAGE:
-            let newMsg=action.newMsg
-            let newPosts=state.userPosts.map((data)=>data);
+            let newMsg=action.newMsg.data
+
+            
+            let newPosts=[...(state.userPosts)].map((data)=>data);
             newPosts.push(newMsg)
-            return {...state,userPosts:newPosts}
+            console.log(newPosts)
+            return {...state}
         case REMOVE_MESSAGE:
-            let msgId=action.msgId
-            let changedPosts=state.userPosts.filter((data)=>(data._id!==msgId));
-            return {...state,usersPosts:changedPosts}
+            let text=action.text
+            let changedPosts=state.userPosts.filter((data)=>(data.text!==text));
+            return {...state,userPosts:changedPosts}
         default:
             return state;
         

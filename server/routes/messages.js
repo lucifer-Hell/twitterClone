@@ -9,7 +9,8 @@ const {isLoggedIn,isCorrectUser}=require('../middlewares/auth')
 router.route('/:id/message')
 .post(isLoggedIn,isCorrectUser,createNewMessage)
 .delete(isLoggedIn,isCorrectUser,deleteMessage)
-router.route('/').get(displayMessage)
+
+router.route('/:id/messages').get(isLoggedIn,isCorrectUser,(displayMessage))
 
 
 

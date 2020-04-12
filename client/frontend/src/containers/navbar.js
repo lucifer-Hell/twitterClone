@@ -11,7 +11,7 @@ function Navbar(props)
         <ul className="navbar-nav navbar-right mr-auto mt-2 mt-lg-0 " id="navOptions">
         <li className="nav-item ">
         
-        <Link to="/dashboard" style={{textDecoration:"none"}}><span className="nav-link">Dashboard</span></Link>
+        <Link to="/" style={{textDecoration:"none"}}><span className="nav-link">Dashboard</span></Link>
         </li>
         <li className="nav-item ">
         <Link to="/new" style={{textDecoration:"none"}}><span className="nav-link">Add New Message</span></Link>

@@ -7,7 +7,7 @@ function authUser(data,mode){
     return (dispatch)=>{
         let response=new Promise(async(resolve,reject)=>{
             try{
-                let fetchedData=await (apiCall("post",`/api/auth/${mode}`,data))
+                let fetchedData=await (apiCall({method:"post",url:`/api/auth/${mode}`,data:data}))
               //  console.log(fetchedData.data)
                 resolve(fetchedData.data)
 
